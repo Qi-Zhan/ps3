@@ -148,7 +148,7 @@ def run_all():
             f"{project} {cve_id} {evaluate.precision_recall_f1(test_results)}")
         test_all.extend(test_results)
     evaluate = Evaluator()
-    logger.info(f"average {evaluate.precision_recall_f1(test_all)}")
+    logger.info(f"RQ1 {evaluate.precision_recall_f1(test_all)}")
     result = evaluate.evaulate_RQ2(test_all)
     logger.info(f"RQ2 {result}")
 
