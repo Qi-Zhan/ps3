@@ -136,18 +136,17 @@ def run_one(tests: list[TestJson]) -> list[TestResult]:
 
 def run_all():
     dataset = Dataset.from_file()
+    evaluate = Evaluator()
     test_all = []
     for cve_id in dataset.tests.keys():
         test_results = []
         logger.info(f"{cve_id}")
+        project = dataset.tests[cve_id][0].project
         result = run_one(dataset.tests[cve_id])
         test_results.extend(result)
-        evaluate = Evaluator()
-        project = dataset.tests[cve_id][0].project
         logger.info(
             f"{project} {cve_id} {evaluate.precision_recall_f1(test_results)}")
         test_all.extend(test_results)
-    evaluate = Evaluator()
     logger.info(f"RQ1 {evaluate.precision_recall_f1(test_all)}")
     result = evaluate.evaulate_RQ2(test_all)
     logger.info(f"RQ2 {result}")
