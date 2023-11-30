@@ -34,7 +34,7 @@ Make sure your derectory structure is the same as below.
 └── ps3 (our tool)
 ```
 
-At current time, we provide `openssl`, `libxml2`, `tcpdump` and `FFmpeg` binaries. If you want to other bianries, you can compile the binaies by optimization, compiler, and version followed `dataset/test.jsonl` and our paper.
+We provide `openssl`, `libxml2`, `tcpdump` and `FFmpeg` binaries used in our paper. If you want to test other bianries, you can compile the binaies by optimization, compiler, and version followed `dataset/test.jsonl`.
 
 > For a quick start you can only download `libxml2`, `tcpdump`, `openssl` since `FFmpeg` is too large to upload and download. The running process is the same.
 
@@ -45,7 +45,7 @@ cd ps3
 python main.py
 ```
 
-Wait for a long time (several hours), and you will get the result in stdout, and log file in `our/log.txt` which contains all the test results for each CVE-binary pair.
+Wait for a long time (several hours), and you will get the results in stdout. `ps3/log.txt` contains test results for each CVE-binary pair.
 
 ### File Name Format
 
